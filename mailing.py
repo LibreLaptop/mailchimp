@@ -24,4 +24,21 @@ body ={
         "from_email":"freddie@mailchimp.com",
         "subject":"Python Devs",
         "language":"EN_US"
+    },
+    "name":"",
+    "contact":{
+        "company":"",
+        "address 1":"",
+        "address 2":"",
+        "city":"",
+        "state":"",
+        "zip":"",
+        "country":""
     }
+}
+
+try:
+    response = mailchimp.lists.create_list(body)
+    print("Response: {}".format(response))
+except ApiClientError as error:
+    print("an exception occurred: {}".format(error.text))
